@@ -1,0 +1,341 @@
+/* 
+selector {
+    property: value;
+    property: value;
+} 
+
+* {
+    property: value;
+}                        Using an asterisk in the place of the selector will apply to all html elements
+                         Generally want to avoid - can cause conflicts.
+*/
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@font-face 
+{
+    font-family: dyslexic;
+    src: url(OpenDyslexic3-Bold.ttf);
+}
+
+body{
+    background-color: darkgray;
+    background-image: url("images/bckgrnd.png");
+    background-size: cover; /* stretches the image to cover the thing */
+    background-attachment: fixed; /* stops the image scrolling */
+    margin: 0px;
+    width: auto;
+    height: 100vh;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    margin: 0px;
+    display: flex;
+    /* align-items: center; */
+    flex: 1;
+    font-family: 'Kreon', serif;
+}
+
+.h1dys{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    margin: 0px;
+    display: flex;
+    /* align-items: center; */
+    flex: 1;
+    font-family: 'dyslexic';
+}
+
+.sizeAdjust
+{
+    height: 1080px;
+    width: 1090px;
+}
+
+.dysFont
+{
+    font-family: 'dyslexic';
+}
+
+.serif
+{
+    font-family: 'Kreon', serif;
+}
+
+.sansSerif
+{
+    font-family: 'El Messiri', sans-serif;
+}
+
+.linkSize
+{
+    font-size: 18;
+}
+
+h3{
+    color: rgb(255, 255, 255);
+    font-size: 20;
+    font-family: 'El Messiri', sans-serif;
+}
+
+p{
+    color: rgb(255, 255, 255);
+}
+
+.alignHeaderText
+{
+    display: flex;
+    align-items: center;
+}
+
+.colourBackground
+{
+    background-color: rgba(63, 125, 206, 0.74)
+}
+
+.whiteBackground
+{
+    background-color: white;
+}
+
+.redText{              /* We can create and affect a class. In the html we put 'class=classname' within the <tag> */
+    color: red;      /* We affect the class in css through the '.classname{}' syntax */
+}
+
+.centreText{
+    text-align: center;
+}
+
+/* Classes can be applied to <div>, and multiple classes can be applied with syntax 'class="class1 class2" */
+/* ID Selector - '#IDname{stuff}. ID is used when something is unique. ID can also be referenced, e.g. with a "return to top" function 
+   if something has both an ID and a class, the ID will take precedence. We need 1 ID on each page for the marking scheme */
+
+#titleBar
+{
+    margin: 0px;
+}
+
+.squish50
+{
+    width: 50%;
+}
+
+.alignRight
+{
+    float: right;
+    margin-left: auto;
+}
+
+.border1
+{
+    border-top: solid 30px rgba(0, 0, 0, 0);
+    border-left: solid 30px rgba(0, 0, 0, 0);
+    border-right: solid 30px rgba(0, 0, 0, 0);
+    border-bottom: solid 30px rgba(0, 0, 0, 0);
+}
+
+.smallercontent{       /* This, combined with our *{box-sizing} will shrink content to fit into the width, keeping the specified values */
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+}
+
+/* when we do a 'width: x%', it takes the percentage from whatever contains it.
+so for instance, if we apply '.squish50' to a <div> with the <body> as its parent,
+it'll become 50% of the size of the <body>. If we were to apply it to a <div> that
+was nested within a <div>, nested within <body>, then our first <div> would squish 
+to 50% of the <div> that contains it - not the <body>. */
+
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imgRight
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* overflow: auto can be used to make text/images fit within a specific flex box, with a scroll bar
+*/
+
+.bigFlexBox
+{
+    display: flex;
+    justify-content: space-between;
+    /* height: 150vh; */
+    overflow: auto;
+}
+
+.gallerySection
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.galleryBuffer
+{
+    margin-top: 515px;
+}
+
+.textScroll
+{
+    overflow: auto;
+    width: 500px;
+    height: 100px;
+}
+
+.textScroll2
+{
+    overflow: auto;
+}
+
+.galleryImages
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+}
+
+/* .wordWrap{
+    word-wrap: normal;
+} */
+
+
+.galleryAnimation img
+{
+    position: absolute;
+    animation: galleryAnimation 20s infinite;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes galleryAnimation
+{
+    40%
+    {
+        opacity: 0;
+    }
+    15%
+    {
+        opacity: 1;
+    }
+}
+
+.galleryAnimation img:nth-child(6)
+{
+    animation-delay: 0s;
+}
+.galleryAnimation img:nth-child(5)
+{
+    animation-delay: 5s;
+}
+.galleryAnimation img:nth-child(4)
+{
+    animation-delay: 10s;
+}
+.galleryAnimation img:nth-child(3)
+{
+    animation-delay: 15s;
+}
+.galleryAnimation img:nth-child(2)
+{
+    animation-delay: 20s;
+}
+.galleryAnimation img:nth-child(1)
+{
+    animation-delay: 25s;
+}
+
+.removeMargin
+{
+    margin: 0px;
+}
+
+.addMargin
+{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.sideNavBox
+{
+    /* width: 250px; */
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+               Gallery Pages
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.bigFlexBox2
+{
+    display: flex;
+    overflow: auto;
+}
+
+.galleryBox
+{
+    display: flex;
+    overflow: auto;
+    /* height: 150vh; */
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.galleryRow
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 1600px;
+}
+
+
+/* .galleryBuffer2
+{
+    /* margin-bottom: 30px; 
+} */
+
+.fullSizeAlignment
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.border2
+{
+    border-top: solid 15px rgba(0, 0, 0, 0);
+    border-left: solid 15px rgba(0, 0, 0, 0);
+    border-right: solid 15px rgba(0, 0, 0, 0);
+    border-bottom: solid 15px rgba(0, 0, 0, 0);
+}
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          About Page 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.extendAbout
+{
+    height: 262px;
+}
